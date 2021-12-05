@@ -1,14 +1,10 @@
 ---
-title: About Aidan Charles Powell
+title: About Scott Hanson
 layout: about.njk
-name: Aidan Charles Powell
-image: '/images/me.jpeg'
+name: Scott Hanson
+image: '/images/smh.jpeg'
 ---
 
-Aidan Charles Powell is a 23-year-old health centre receptionist who enjoys watching television, eating out and social media. He is generous and giving, but can also be very rude and a bit lazy.
+This is a personal weblog by Scott Hanson. The opinions expressed here are his and his alone.
 
-He is a Jedi who defines himself as straight. He has a degree in medicine. He is a vegetarian. He is obsessed with vintage dresses.
-
-He grew up in a middle class neighbourhood. After his mother died when he was young, he was raised by his father
-
-He is currently married to Maureen Erika Quinn. Maureen is 13 years older than him and works as a sales assistant.
+Born in 1962 in California, raised in Minnesota, he has lived since 1990 in Germany. His wife Frauke is a McDonald's franchisee with 5 restaurants in Nordheide-Harburg. They live in Jesteburg (near Hamburg). Their son Christopher attends the TUHH university in Hamburg.
