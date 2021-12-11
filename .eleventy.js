@@ -63,7 +63,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('post_permalink', (page) => {
     const yyyy = page.date.getFullYear();
     const mm = String(page.date.getMonth() + 1).padStart(2, '0');
-    return `${yyyy}/${mm}/${page.fileSlug}/`;
+    const dd = String(page.date.getDate()).padStart(2, '0');
+    return `${yyyy}/${mm}/${dd}/${page.fileSlug}/`;
   });
 
   eleventyConfig.addFilter('excerpt', (post) => {
