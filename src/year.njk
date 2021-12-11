@@ -1,25 +1,20 @@
 ---
-pagination:
-  data: collections
-  size: 20
-  alias: tag
-  filter:
-    - all
-    - nav
-    - post
-    - posts
-    - postsByMonth
-    - postsByYear
-    - tagList
-  addAllPagesToCollections: true
+title: Yearly Archive
 layout: base.njk
-permalink: /year/index.html
+permalink: "archives/{% if pagination.pageNumber > 0 %}{{ posts }}/{% endif %}index.html"
+pagination:
+  data: collections.postsByYear
+  size: 1
+  alias: posts
+  reverse: true
 ---
-{% for year, yearPosts in collections.postsByYear %}
-  <h2>{{ year }}</h2>
-  <ul>
-    {% for post in yearPosts | reverse %}
-      <li>{{ post.data.title }} {# post.data | debug | safe #}</li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+<h1>{{ posts | title }}</h1>
+<ul>
+  {% for post in collections.postsByYear[posts] | reverse %}
+  <li>
+    {{post.date | readableDate}} <a href="{{ post.url }}">{{ post.data.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+

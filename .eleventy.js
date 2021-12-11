@@ -7,7 +7,8 @@ const _ = require('lodash');
 const inspect = require('util').inspect;
 const fs = require('fs');
 const path = require('path');
-const contentByDate = require('./src/utils/content-by-date.js');
+// const contentByDate = require('./src/utils/content-by-date.js');
+const collections = require('./src/utils/collections.js');
 
 const isDev = process.env.ELEVENTY_ENV === 'development';
 const isProd = process.env.ELEVENTY_ENV === 'production'
@@ -120,16 +121,20 @@ module.exports = function (eleventyConfig) {
     return [...tagSet];
   });
 
-  eleventyConfig.addCollection('postsByYear', (collection) => {
-    const posts = collection.getFilteredByGlob('src/posts/**/*.md');
-    return _.chain(posts)
-      .groupBy((post) => post.date.getFullYear())
-      .toPairs()
-      .reverse()
-      .value();
-  });
+  Object.keys(collections).forEach((collectionName) => {
+    eleventyConfig.addCollection(collectionName, collections[collectionName]);
+    });
 
-  eleventyConfig.addCollection( 'postsByMonth', contentByDate.contentByMonth);
+  // eleventyConfig.addCollection('postsByYear', (collection) => {
+  //   const posts = collection.getFilteredByGlob('src/posts/**/*.md');
+  //   return _.chain(posts)
+  //     .groupBy((post) => post.date.getFullYear())
+  //     .toPairs()
+  //     .reverse()
+  //     .value();
+  // });
+
+  // eleventyConfig.addCollection( 'postsByMonth', contentByDate.contentByMonth);
 
   eleventyConfig.addFilter('pageTags', (tags) => {
     const generalTags = ['all', 'nav', 'post', 'posts'];

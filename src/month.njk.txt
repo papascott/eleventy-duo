@@ -1,0 +1,18 @@
+---
+layout: base.njk
+permalink: /test/{{ month }}/
+eleventyComputed:
+  title: "{{ month | title }}"
+  description: "All posts from “{{ month }}”"
+---
+<h1>{{ month | title }}</h1>
+
+{% set postslist = collections[postsByMonth] %}
+<ol>
+{% for post in postslist | reverse %}
+  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ol>
+
+
+{# include "posts-list.njk" #}
