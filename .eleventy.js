@@ -7,6 +7,7 @@ const _ = require('lodash');
 const inspect = require('util').inspect;
 const fs = require('fs');
 const path = require('path');
+const contentByDate = require('./src/utils/content-by-date.js');
 
 const isDev = process.env.ELEVENTY_ENV === 'development';
 const isProd = process.env.ELEVENTY_ENV === 'production'
@@ -59,6 +60,11 @@ module.exports = function (eleventyConfig) {
     `<pre>${inspect(content)}</pre>`
   );
 
+  eleventyConfig.addFilter('post_permalink', (page) => {
+    const yyyy = page.date.getFullYear();
+    const mm = String(page.date.getMonth() + 1).padStart(2, '0');
+    return `${yyyy}/${mm}/${page.fileSlug}/`;
+  });
 
   eleventyConfig.addFilter('excerpt', (post) => {
     const content = post.replace(/(<([^>]+)>)/gi, '');
@@ -121,6 +127,8 @@ module.exports = function (eleventyConfig) {
       .reverse()
       .value();
   });
+
+  eleventyConfig.addCollection( 'contentByMonth', contentByDate.contentByMonth);
 
   eleventyConfig.addFilter('pageTags', (tags) => {
     const generalTags = ['all', 'nav', 'post', 'posts'];
