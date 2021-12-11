@@ -1,0 +1,23 @@
+---
+pagination:
+  data: collections
+  size: 20
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - tagList
+  addAllPagesToCollections: true
+layout: base.njk
+permalink: /year/index.html
+---
+{% for year, yearPosts in collections.postsByYear %}
+  <h2>{{ year }}</h2>
+  <ul>
+    {% for post in yearPosts | reverse %}
+      <li>{{ post.data.title }} {# post.data | debug | safe #}</li>
+    {% endfor %}
+  </ul>
+{% endfor %}

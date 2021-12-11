@@ -3,6 +3,8 @@ const readingTime = require('eleventy-plugin-reading-time');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const htmlmin = require('html-minifier')
+const _ = require('lodash');
+const inspect = require('util').inspect;
 const fs = require('fs');
 const path = require('path');
 
@@ -52,6 +54,11 @@ module.exports = function (eleventyConfig) {
       ? `<script src="${manifest['main.js']}"></script>`
       : '';
   });
+
+  eleventyConfig.addFilter('debug', (content) =>
+    `<pre>${inspect(content)}</pre>`
+  );
+
 
   eleventyConfig.addFilter('excerpt', (post) => {
     const content = post.replace(/(<([^>]+)>)/gi, '');
@@ -103,13 +110,20 @@ module.exports = function (eleventyConfig) {
         }
       }
     });
-
     return [...tagSet];
+  });
+
+  eleventyConfig.addCollection('postsByYear', (collection) => {
+    const posts = collection.getFilteredByGlob('src/posts/**/*.md');
+    return _.chain(posts)
+      .groupBy((post) => post.date.getFullYear())
+      .toPairs()
+      .reverse()
+      .value();
   });
 
   eleventyConfig.addFilter('pageTags', (tags) => {
     const generalTags = ['all', 'nav', 'post', 'posts'];
-
     return tags
       .toString()
       .split(',')
