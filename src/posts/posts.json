@@ -1,5 +1,5 @@
 {
   "layout": "post",
   "tags": ["posts"],
-  "permalink": "posts/{{ page | post_permalink }}"
+  "permalink": "archives/{{ page | post_permalink }}"
 }

@@ -129,7 +129,7 @@ module.exports = function (eleventyConfig) {
       .value();
   });
 
-  eleventyConfig.addCollection( 'contentByMonth', contentByDate.contentByMonth);
+  eleventyConfig.addCollection( 'postsByMonth', contentByDate.contentByMonth);
 
   eleventyConfig.addFilter('pageTags', (tags) => {
     const generalTags = ['all', 'nav', 'post', 'posts'];
