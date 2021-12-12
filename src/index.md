@@ -1,8 +1,8 @@
 ---
 layout: home
-title: 'Eleventy Duo'
+title: 'Home'
 ---
 
-# Hello World
+# Scott Hanson . DE
 
-Eleventy Duo is a minimal and beautiful Eleventy theme for personal blogs. Checkout the [project's github repo](https://github.com/yinkakun/eleventy-duo) for more info.
+This is a personal blog by Scott Hanson (formerly [papascott.de](https://www.papascott.de))
