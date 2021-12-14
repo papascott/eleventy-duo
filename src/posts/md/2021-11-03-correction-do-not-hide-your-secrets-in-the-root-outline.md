@@ -1,5 +1,5 @@
 ---
-date: 2021-11-02
+date: 2021-11-03
 title: 'Correction: Do NOT hide your secrets in the root outline'
 tags: tech
 ---
