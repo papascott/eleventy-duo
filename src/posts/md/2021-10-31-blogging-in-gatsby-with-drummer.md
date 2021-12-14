@@ -4,7 +4,7 @@ title: Blogging in Gatsby with Drummer
 tags: tech
 ---
 
-It works! At least for me, with a lot of limitations. But this post (and the two previous posts) on my <a href="https://www.gatsbyjs.com/">Gatsby</a>-powered blog was written in <a href="http://docserver.scripting.com/drummer/about.opml">Drummer</a>. The Dummer posts are integrated with the previous posts that were written in Markdown. The code for my blog with the new OPML plugin is on <a href="https://github.com/papascott/papascott-gatsby">GitHub</a>.
+It works! At least for me, with a lot of limitations. But this post (and the two previous posts) on my <a href="https://www.gatsbyjs.com/">Gatsby</a>-powered blog was written in <a href="http://docserver.scripting.com/drummer/about.opml">Drummer</a>. The Dummer posts are integrated with the previous posts that were written in Markdown. The code for my blog with the new OPML plugin is on <a href="https://github.com/scotthansonde/papascott-gatsby">GitHub</a>.
 
 As I mentioned, I started with <a href="https://github.com/andrewshell/gatsby-demo-opmlnotes">demo code</a> by Andrew Shell for Little Outliner outlines. That was written for Gatsby v2, I submitted a couple of fixes so it would work with Gatsby v3 and the recently released v4.
 
