@@ -3,3 +3,8 @@
   max-width: fit-content;
   margin-top: 0;
 }
+
+code,
+kbd {
+  padding: 0px 0px;
+}

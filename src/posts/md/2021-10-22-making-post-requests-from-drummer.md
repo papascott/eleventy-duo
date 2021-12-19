@@ -8,7 +8,8 @@ That build hook URL for Netlify requires a POST request. But Drummer lets you ru
 
 ```js
 const xhr = new XMLHttpRequest();
-const hookUrl = 'https://api.netlify.com/build_hooks/XXX'; // XXX is given to you by Netlify
+// XXX is given to you by Netlify
+const hookUrl = 'https://api.netlify.com/build_hooks/XXX';
 xhr.open('POST', hookUrl, true);
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.send(JSON.stringify({}));
