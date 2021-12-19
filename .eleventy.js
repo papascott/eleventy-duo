@@ -57,9 +57,14 @@ module.exports = function (eleventyConfig) {
       : '';
   });
 
+  // two debugging filters
   eleventyConfig.addFilter('debug', (content) =>
     `<pre>${inspect(content)}</pre>`
   );
+  eleventyConfig.addFilter("debugger", (...args) => {
+    console.log(...args)
+    debugger;
+  });
 
   eleventyConfig.addFilter('post_permalink', (page) => {
     const yyyy = page.date.getFullYear();
