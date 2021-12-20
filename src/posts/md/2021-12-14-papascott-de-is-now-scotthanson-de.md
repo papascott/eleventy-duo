@@ -1,5 +1,4 @@
 ---
-layout: post
 date: 2021-12-14T12:09:09.674Z
 title: papascott.de is now scotthanson.de
 tags: personal
