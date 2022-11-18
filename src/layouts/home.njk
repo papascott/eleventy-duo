@@ -17,6 +17,9 @@ layout: base
             {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
           {% endif %}
 
+          {% if item.mastodon %}
+            {% set externalAttribute = 'target="_blank" rel="me noopener noreferrer"' %}
+          {% endif %}
           <li>
             <a href="{{ item.url | url }}" {{ externalAttribute | safe }}>{{ item.text }}</a>
           </li>

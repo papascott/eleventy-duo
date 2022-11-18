@@ -21,14 +21,20 @@
     }
   ],
   "socialLinks": [
-    {
-      "text": "GitHub",
-      "url": "https://github.com/scotthansonde",
+     {
+      "text": "Mastodon",
+      "url": "https://norden.social/@ScottHansonDE",
+      "mastodon": true,
       "external": true
     },
     {
       "text": "Twitter",
       "url": "https://twitter.com/ScottHansonDE",
+      "external": true
+    },
+    {
+      "text": "GitHub",
+      "url": "https://github.com/scotthansonde",
       "external": true
     }
   ],
